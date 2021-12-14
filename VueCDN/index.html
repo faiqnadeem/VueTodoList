@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+        <link href="style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>{{greet('night')}}</h1>
+            <p>your age is {{age}}</p>
+
+            <button @click.once="add(1)">add year</button>
+            <button @click="subtract(1)">delete year</button>
+
+            <button v-on:dblclick="add(10)">add 10 year</button>
+            <button v-on:dblclick="subtract(10)">delete 10 year</button>
+
+            <a v-on:click.prevent="clickLink" href="google.com">check function link</a>
+
+            <a v-bind:href="website">link</a>
+            <p v-html="websiteTag"></p>
+
+            <input type="text" v-model="name" />
+            <input type="text" v-model="age" />
+
+            <div v-bind:class="compClasses">
+                <button v-on:click="available = !available">Click Me To change Color</button>
+                <span>TOGGLE COLOR</span>
+            </div>
+
+            <div id="canvas" v-on:mousemove="updateXY">
+                {{x}}, {{y}}
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
