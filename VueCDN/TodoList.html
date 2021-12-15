@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+        <link href="style.css" rel="stylesheet" />
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container" id="vue-app">
+            <div class="row container">
+                <h1 class="mr-auto">TODO LIST</h1>
+                <button class="btn btn-primary float-right" v-on:click="formShow = !formShow">New Task</button>
+            </div>
+            
+            <div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope = "col">#</th>
+                            <th scope = "col">Title</th>
+                            <th scope = "col">Date</th>
+                            <th scope = "col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(todoItem, index) in todoList" >
+                            <td @click="test(index)" v-bind:class="striked(index)">
+                                <span>{{index}}</span>
+                            </td>
+                            <td v-bind:class="striked(index)">
+                                <span>{{todoItem.title}}</span>
+                            </td>
+                            <td v-bind:class="striked(index)">
+                                <span>{{todoItem.date}}</span>
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" @click="deleteTodoItem(index)">Delete</button>
+                                <button class="btn btn-success" @click="changeStatusTodoItem(index)" v-bind:class="striked(index)">
+                                    <span>Done</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div v-show="formShow">
+                <input class="form-control col-lg-4" type="text" v-model="todoItem.title" />
+                <input class="form-control col-lg-4" type="datetime-local" v-model="todoItem.date" />
+
+                <button class="btn btn-primary" @click="addTodoItem">Submit</button>
+            </div>
+
+        </div>
+        <script src="todoList.js"></script>
+        
+    </body>
+</html>

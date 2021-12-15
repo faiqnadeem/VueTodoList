@@ -8,6 +8,12 @@ new Vue({
         x         : 0,
         y         : 0,
         available : false,
+        success   : false,
+        TodoList  : [
+            {title:'entry1', time:'time1'},
+            {title:'entry2', time:'time2'},
+            {title:'entry3', time:'time3'},
+        ]
     },
     methods:{
         greet: function(time){
