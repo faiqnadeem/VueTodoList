@@ -29,7 +29,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(todoItem, index) in todoList" >
+                        <tr v-for="(todoItem, index) in todoListReversed" >
                             <td @click="test(index)" v-bind:class="striked(index)">
                                 <span>{{index}}</span>
                             </td>

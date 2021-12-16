@@ -25,4 +25,9 @@ new Vue({
             }
         }
     },
+    computed: {
+        todoListReversed() {
+            return this.todoList.slice(0).reverse()
+        }
+    }
 });
