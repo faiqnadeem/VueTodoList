@@ -5,16 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link href="style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        
     </head>
     <body>
-        <div class="container" id="vue-app">
+        <section class="section" id="vue-app">
             <div class="row container">
-                <h1 class="mr-auto">TODO LIST</h1>
-                <h1>{{notification}}</h1>
+                <div class="mr-auto">
+                    <h1 class="mr-auto title">TODO LIST</h1>
+                    <p class="subtitle">{{notification}}</p>
+                </div>
                 <button class="btn btn-primary float-right" v-on:click="formShow = !formShow">New Task</button>
             </div>
             
@@ -57,7 +59,7 @@
                 <button class="btn btn-primary" @click="addTodoItem">Submit</button>
             </div>
 
-        </div>
+        </section>
         <script src="todoList.js"></script>
         
     </body>
